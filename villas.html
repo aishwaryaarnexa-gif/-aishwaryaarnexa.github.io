@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Discover luxury mountain villa stays with Summit & Stays. Private pools, panoramic views, mountain villas across India. Book online instantly." />
+  <title>Luxury Villa Stays — Summit & Stays</title>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,700;0,800;1,700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="villas.css" />
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar scrolled" id="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <span class="logo-icon">⛰️</span>
+        <div>
+          <span class="logo-text">Summit <span style="color:var(--clr-primary)">&</span> Stays</span>
+          <span class="logo-sub">Trek · Stay · Explore</span>
+        </div>
+      </a>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="treks.html" class="nav-link">Treks</a></li>
+        <li><a href="villas.html" class="nav-link active">Villas</a></li>
+        <li><a href="booking.html" class="nav-link">Book Now</a></li>
+        <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+      </ul>
+      <div class="nav-actions">
+        <a href="treks.html" class="btn-nav-outline">Treks</a>
+        <a href="booking.html" class="btn-nav-primary" id="nav-book-btn">Book Now</a>
+        <button class="hamburger" id="hamburger" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- PAGE HERO -->
+  <div class="page-hero villa-hero">
+    <div class="page-hero-bg">
+      <img src="images/villa_luxury.png" alt="Luxury mountain villa" />
+      <div class="page-hero-overlay villa-hero-overlay"></div>
+    </div>
+    <div class="page-hero-content">
+      <div class="container">
+        <div class="section-eyebrow villa" style="margin-bottom:12px">🏡 Luxury Mountain Villas</div>
+        <h1 class="page-hero-title">Luxury <span style="background:var(--grad-villa);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">Villa Stays</span></h1>
+        <p class="page-hero-sub">Handpicked mountain villas with private pools, panoramic views, personal chefs, and world-class comfort.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- FILTER -->
+  <section class="villas-main section-sm" id="villas-main">
+    <div class="container">
+      <div class="villas-toolbar reveal">
+        <div class="filter-bar">
+          <button class="filter-btn active" onclick="filterVillas('all')" id="vf-all">All Villas</button>
+          <button class="filter-btn" onclick="filterVillas('luxury')" id="vf-luxury">Luxury</button>
+          <button class="filter-btn" onclick="filterVillas('pool')" id="vf-pool">With Pool</button>
+          <button class="filter-btn" onclick="filterVillas('mountain')" id="vf-mountain">Mountain View</button>
+          <button class="filter-btn" onclick="filterVillas('forest')" id="vf-forest">Forest</button>
+          <button class="filter-btn" onclick="filterVillas('glamping')" id="vf-glamping">Glamping</button>
+        </div>
+        <div class="guest-range-filter">
+          <label for="guest-range" class="sort-label">Max Guests:</label>
+          <select id="guest-range" class="form-control" style="width:auto;padding:9px 14px" onchange="filterByGuests(this.value)">
+            <option value="any">Any</option>
+            <option value="2">Up to 2</option>
+            <option value="6">Up to 6</option>
+            <option value="10">Up to 10</option>
+            <option value="20">Up to 20</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Villas Grid -->
+      <div class="villas-grid" id="villas-grid">
+
+        <!-- Villa 1 -->
+        <div class="villa-full-card card reveal" id="vc-1" data-category="luxury pool mountain" data-guests="8" data-price="18999">
+          <div class="vfc-gallery">
+            <div class="vfc-main-img">
+              <img src="images/villa_luxury.png" alt="The Summit Villa" loading="lazy" />
+              <div class="vfc-badges">
+                <span class="badge badge-luxury">Luxury</span>
+                <span class="tfc-like" onclick="toggleLike(this)" id="vlike-1">🤍</span>
+              </div>
+              <div class="vfc-img-count">📷 12 Photos</div>
+            </div>
+          </div>
+          <div class="vfc-body">
+            <div class="vfc-top">
+              <div>
+                <div class="villa-location">📍 Manali, Himachal Pradesh</div>
+                <h2 class="villa-name">The Summit Villa</h2>
+                <div class="vfc-rating-row">
+                  <span class="stars">★★★★★</span>
+                  <span class="rating-val">4.9 (86 reviews)</span>
+                  <span class="vfc-superhost">🏅 Superhost</span>
+                </div>
+              </div>
+              <div class="vfc-price-block">
+                <span class="trek-from">From</span>
+                <span class="trek-price villa-price">₹18,999</span>
+                <span class="trek-per">/ night</span>
+              </div>
+            </div>
+            <p class="villa-desc">Perched at 7,000ft on a private ridge with unobstructed 270° views of the Himalayan range. Features an infinity pool that seems to merge with the sky, a private chef, and a rooftop bonfire terrace.</p>
+            <div class="vfc-specs">
+              <div class="vfc-spec"><span>🛏️</span><span>4 Bedrooms</span></div>
+              <div class="vfc-spec"><span>🛁</span><span>4 Bathrooms</span></div>
+              <div class="vfc-spec"><span>👥</span><span>Max 8 Guests</span></div>
+              <div class="vfc-spec"><span>📐</span><span>3,200 sq ft</span></div>
+            </div>
+            <div class="vfc-amenities">
+              <span class="amenity-pill">🏊 Infinity Pool</span>
+              <span class="amenity-pill">🔥 Fireplace</span>
+              <span class="amenity-pill">🍳 Private Chef</span>
+              <span class="amenity-pill">🚗 Airport Pickup</span>
+              <span class="amenity-pill">📡 High-Speed WiFi</span>
+              <span class="amenity-pill">🌅 Panoramic Deck</span>
+              <span class="amenity-pill">🏋️ Gym</span>
+            </div>
+            <div class="vfc-footer">
+              <div class="vfc-perks">
+                <span class="vfc-perk">✓ Free cancellation 48hrs before</span>
+                <span class="vfc-perk">✓ Complimentary breakfast</span>
+              </div>
+              <a href="booking.html?type=villa&id=summit" class="btn-villa" id="vbook-1">Reserve Villa →</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Villa 2 -->
+        <div class="villa-full-card card reveal reveal-delay-1" id="vc-2" data-category="forest luxury" data-guests="6" data-price="12499">
+          <div class="vfc-gallery">
+            <div class="vfc-main-img">
+              <img src="images/villa_interior.png" alt="Forest Retreat Villa" loading="lazy" />
+              <div class="vfc-badges">
+                <span class="badge badge-premium">Premium</span>
+                <span class="tfc-like" onclick="toggleLike(this)" id="vlike-2">🤍</span>
+              </div>
+              <div class="vfc-img-count">📷 9 Photos</div>
+            </div>
+          </div>
+          <div class="vfc-body">
+            <div class="vfc-top">
+              <div>
+                <div class="villa-location">📍 Coorg, Karnataka</div>
+                <h2 class="villa-name">Forest Retreat Villa</h2>
+                <div class="vfc-rating-row">
+                  <span class="stars">★★★★★</span>
+                  <span class="rating-val">4.8 (142 reviews)</span>
+                  <span class="vfc-superhost">🏅 Superhost</span>
+                </div>
+              </div>
+              <div class="vfc-price-block">
+                <span class="trek-from">From</span>
+                <span class="trek-price villa-price">₹12,499</span>
+                <span class="trek-per">/ night</span>
+              </div>
+            </div>
+            <p class="villa-desc">Nestled deep inside a 200-acre organic coffee plantation. Floor-to-ceiling glass walls bring the forest inside while you enjoy a crackling fireplace, curated wine menu, and morning bird song.</p>
+            <div class="vfc-specs">
+              <div class="vfc-spec"><span>🛏️</span><span>3 Bedrooms</span></div>
+              <div class="vfc-spec"><span>🛁</span><span>3 Bathrooms</span></div>
+              <div class="vfc-spec"><span>👥</span><span>Max 6 Guests</span></div>
+              <div class="vfc-spec"><span>📐</span><span>2,400 sq ft</span></div>
+            </div>
+            <div class="vfc-amenities">
+              <span class="amenity-pill">🌿 Private Garden</span>
+              <span class="amenity-pill">🔥 Fireplace</span>
+              <span class="amenity-pill">☕ Coffee Bar</span>
+              <span class="amenity-pill">🌅 Forest Views</span>
+              <span class="amenity-pill">🍷 Wine Cellar</span>
+              <span class="amenity-pill">🚿 Rain Shower</span>
+            </div>
+            <div class="vfc-footer">
+              <div class="vfc-perks">
+                <span class="vfc-perk">✓ Free cancellation 48hrs before</span>
+                <span class="vfc-perk">✓ Coffee plantation tour included</span>
+              </div>
+              <a href="booking.html?type=villa&id=forest" class="btn-villa" id="vbook-2">Reserve Villa →</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Villa 3 -->
+        <div class="villa-full-card card reveal" id="vc-3" data-category="glamping mountain" data-guests="4" data-price="8999">
+          <div class="vfc-gallery">
+            <div class="vfc-main-img">
+              <img src="images/camping_night.png" alt="Stargazer Luxury Camp" loading="lazy" />
+              <div class="vfc-badges">
+                <span class="badge badge-luxury">Boutique</span>
+                <span class="tfc-like" onclick="toggleLike(this)" id="vlike-3">🤍</span>
+              </div>
+              <div class="vfc-img-count">📷 15 Photos</div>
+            </div>
+          </div>
+          <div class="vfc-body">
+            <div class="vfc-top">
+              <div>
+                <div class="villa-location">📍 Spiti Valley, Himachal Pradesh</div>
+                <h2 class="villa-name">Stargazer Luxury Camp</h2>
+                <div class="vfc-rating-row">
+                  <span class="stars">★★★★★</span>
+                  <span class="rating-val">4.9 (59 reviews)</span>
+                </div>
+              </div>
+              <div class="vfc-price-block">
+                <span class="trek-from">From</span>
+                <span class="trek-price villa-price">₹8,999</span>
+                <span class="trek-per">/ night</span>
+              </div>
+            </div>
+            <p class="villa-desc">Glamping at 12,000ft with climate-controlled canvas suites under a billion stars. Professional astrophotography sessions, fine dining by the bonfire, and a private hot tub with mountain views.</p>
+            <div class="vfc-specs">
+              <div class="vfc-spec"><span>🛏️</span><span>2 Suite Tents</span></div>
+              <div class="vfc-spec"><span>🛁</span><span>En-suite Baths</span></div>
+              <div class="vfc-spec"><span>👥</span><span>Max 4 Guests</span></div>
+              <div class="vfc-spec"><span>📐</span><span>800 sq ft</span></div>
+            </div>
+            <div class="vfc-amenities">
+              <span class="amenity-pill">⭐ Stargazing Deck</span>
+              <span class="amenity-pill">🛁 Hot Tub</span>
+              <span class="amenity-pill">🍷 Fine Dining</span>
+              <span class="amenity-pill">📡 Starlink WiFi</span>
+              <span class="amenity-pill">🔭 Telescope</span>
+              <span class="amenity-pill">🔥 Bonfire</span>
+            </div>
+            <div class="vfc-footer">
+              <div class="vfc-perks">
+                <span class="vfc-perk">✓ All meals included</span>
+                <span class="vfc-perk">✓ Astrophotography session</span>
+              </div>
+              <a href="booking.html?type=villa&id=stargazer" class="btn-villa" id="vbook-3">Reserve Villa →</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Villa 4 -->
+        <div class="villa-full-card card reveal reveal-delay-1" id="vc-4" data-category="luxury pool mountain" data-guests="12" data-price="28999">
+          <div class="vfc-gallery">
+            <div class="vfc-main-img">
+              <img src="images/waterfall_trek.png" alt="Cascade Estate Villa" loading="lazy" />
+              <div class="vfc-badges">
+                <span class="badge badge-luxury">Ultra Luxury</span>
+                <span class="tfc-like" onclick="toggleLike(this)" id="vlike-4">🤍</span>
+              </div>
+              <div class="vfc-img-count">📷 20 Photos</div>
+            </div>
+          </div>
+          <div class="vfc-body">
+            <div class="vfc-top">
+              <div>
+                <div class="villa-location">📍 Mussoorie, Uttarakhand</div>
+                <h2 class="villa-name">Cascade Estate</h2>
+                <div class="vfc-rating-row">
+                  <span class="stars">★★★★★</span>
+                  <span class="rating-val">5.0 (31 reviews)</span>
+                  <span class="vfc-superhost">🏅 Superhost</span>
+                </div>
+              </div>
+              <div class="vfc-price-block">
+                <span class="trek-from">From</span>
+                <span class="trek-price villa-price">₹28,999</span>
+                <span class="trek-per">/ night</span>
+              </div>
+            </div>
+            <p class="villa-desc">A colonial heritage estate on 5 acres with private waterfall, heated pool, billiards room, wine cellar and staff of 6. Host weddings, retreats or simply have the most luxurious getaway of your life.</p>
+            <div class="vfc-specs">
+              <div class="vfc-spec"><span>🛏️</span><span>6 Bedrooms</span></div>
+              <div class="vfc-spec"><span>🛁</span><span>6 Bathrooms</span></div>
+              <div class="vfc-spec"><span>👥</span><span>Max 12 Guests</span></div>
+              <div class="vfc-spec"><span>📐</span><span>7,000 sq ft</span></div>
+            </div>
+            <div class="vfc-amenities">
+              <span class="amenity-pill">🏊 Heated Pool</span>
+              <span class="amenity-pill">🌊 Private Waterfall</span>
+              <span class="amenity-pill">🍳 Private Chef</span>
+              <span class="amenity-pill">🎱 Billiards Room</span>
+              <span class="amenity-pill">🍷 Wine Cellar</span>
+              <span class="amenity-pill">🚗 Chauffeured SUV</span>
+              <span class="amenity-pill">🌿 Spa</span>
+            </div>
+            <div class="vfc-footer">
+              <div class="vfc-perks">
+                <span class="vfc-perk">✓ Free cancellation 48hrs before</span>
+                <span class="vfc-perk">✓ Dedicated event coordinator</span>
+              </div>
+              <a href="booking.html?type=villa&id=cascade" class="btn-villa" id="vbook-4">Reserve Villa →</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="no-results" id="no-results-v" style="display:none">
+        <div class="no-results-icon">🏡</div>
+        <h3>No villas found</h3>
+        <p>Try adjusting your filters.</p>
+        <button class="btn-secondary" onclick="filterVillas('all')" id="reset-villa-filters-btn">Reset Filters</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- VILLA AMENITIES SECTION -->
+  <section class="villa-amenities-section section" id="villa-amenities-section">
+    <div class="container">
+      <div class="section-header center reveal">
+        <div class="section-eyebrow villa">Villa Amenities</div>
+        <h2 class="section-title">Every Villa <span class="grad-villa">Includes</span></h2>
+      </div>
+      <div class="va-grid reveal">
+        <div class="va-item" id="va-1">
+          <span>🛏️</span>
+          <h4>Premium Bedding</h4>
+          <p>400-thread-count linens, premium pillows, and luxury mattresses in every room.</p>
+        </div>
+        <div class="va-item" id="va-2">
+          <span>🍳</span>
+          <h4>Fully Equipped Kitchen</h4>
+          <p>Professional-grade kitchen with all appliances, cookware, and pantry staples.</p>
+        </div>
+        <div class="va-item" id="va-3">
+          <span>📡</span>
+          <h4>High-Speed Internet</h4>
+          <p>Reliable WiFi coverage throughout the property — work from paradise.</p>
+        </div>
+        <div class="va-item" id="va-4">
+          <span>🚗</span>
+          <h4>Airport Transfers</h4>
+          <p>Complimentary pickup and drop to the nearest airport or railway station.</p>
+        </div>
+        <div class="va-item" id="va-5">
+          <span>🧹</span>
+          <h4>Daily Housekeeping</h4>
+          <p>Professional cleaning staff to ensure your villa is always spotless.</p>
+        </div>
+        <div class="va-item" id="va-6">
+          <span>🎯</span>
+          <h4>Concierge Service</h4>
+          <p>24/7 dedicated concierge for restaurant reservations, activities, and more.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer" id="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="logo-wrap">
+            <span class="logo-icon">⛰️</span>
+            <div>
+              <span class="logo-text">Summit & Stays</span>
+              <span class="logo-sub">Trek · Stay · Explore</span>
+            </div>
+          </div>
+          <p class="footer-tagline">India's most trusted platform for trekking adventures and luxury mountain villa bookings.</p>
+          <div class="footer-socials">
+            <a href="#" class="social-btn" id="f-ig">📸</a>
+            <a href="#" class="social-btn" id="f-fb">👤</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Villa Stays</h4>
+          <ul>
+            <li><a href="booking.html?type=villa&id=summit">The Summit Villa</a></li>
+            <li><a href="booking.html?type=villa&id=forest">Forest Retreat</a></li>
+            <li><a href="booking.html?type=villa&id=stargazer">Stargazer Camp</a></li>
+            <li><a href="booking.html?type=villa&id=cascade">Cascade Estate</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="treks.html">Trek Packages</a></li>
+            <li><a href="booking.html">Book Now</a></li>
+            <li><a href="index.html#contact">Contact Us</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <ul>
+            <li><span>📍 Pune, Maharashtra</span></li>
+            <li><span>📞 +91 98765 43210</span></li>
+            <li><span>✉️ hello@summitstays.in</span></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 Summit & Stays. All rights reserved.</p>
+        <div class="footer-bottom-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms</a>
+          <a href="#">Refund Policy</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <div class="toast" id="toast"></div>
+  <script src="shared.js"></script>
+  <script src="villas.js"></script>
+</body>
+</html>

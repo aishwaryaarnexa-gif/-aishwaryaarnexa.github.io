@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Book your trekking adventure or luxury villa stay with Summit & Stays. Simple 3-step booking with instant confirmation." />
+  <title>Book Your Adventure — Summit & Stays</title>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,700;0,800;1,700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="booking.css" />
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar scrolled" id="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <span class="logo-icon">⛰️</span>
+        <div>
+          <span class="logo-text">Summit <span style="color:var(--clr-primary)">&</span> Stays</span>
+          <span class="logo-sub">Trek · Stay · Explore</span>
+        </div>
+      </a>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="treks.html" class="nav-link">Treks</a></li>
+        <li><a href="villas.html" class="nav-link">Villas</a></li>
+        <li><a href="booking.html" class="nav-link active">Book Now</a></li>
+        <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+      </ul>
+      <div class="nav-actions">
+        <a href="index.html" class="btn-nav-outline">Home</a>
+        <button class="hamburger" id="hamburger" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- BOOKING PAGE -->
+  <div class="booking-page" id="booking-page">
+    <div class="booking-bg">
+      <img src="images/hero_mountain.png" alt="Adventure backdrop" />
+      <div class="booking-bg-overlay"></div>
+    </div>
+
+    <div class="container">
+      <!-- Progress Steps -->
+      <div class="booking-progress" id="booking-progress">
+        <div class="progress-step active" id="progress-1">
+          <div class="progress-num">1</div>
+          <span>Select Package</span>
+        </div>
+        <div class="progress-line" id="pline-1"></div>
+        <div class="progress-step" id="progress-2">
+          <div class="progress-num">2</div>
+          <span>Your Details</span>
+        </div>
+        <div class="progress-line" id="pline-2"></div>
+        <div class="progress-step" id="progress-3">
+          <div class="progress-num">3</div>
+          <span>Payment</span>
+        </div>
+      </div>
+
+      <div class="booking-layout">
+        <!-- LEFT: FORM STEPS -->
+        <div class="booking-form-col">
+
+          <!-- STEP 1: Package Selection -->
+          <div class="booking-step active" id="step-1">
+            <div class="step-header">
+              <h2>Choose Your Adventure</h2>
+              <p>Select a trek or villa package to get started</p>
+            </div>
+
+            <!-- Type Toggle -->
+            <div class="type-toggle" id="type-toggle">
+              <button class="type-btn active" id="type-trek-btn" onclick="setType('trek')">
+                🏔️ Trek Package
+              </button>
+              <button class="type-btn" id="type-villa-btn" onclick="setType('villa')">
+                🏡 Villa Stay
+              </button>
+            </div>
+
+            <!-- Trek Options -->
+            <div class="package-options" id="trek-options">
+              <div class="pkg-option selected" id="pkg-himalayan" onclick="selectPackage('trek', 'himalayan', 'Himalayan Escape Trek', 12999, 7)" data-price="12999">
+                <div class="pkg-img"><img src="images/hero_mountain.png" alt="Himalayan Trek" /></div>
+                <div class="pkg-info">
+                  <div class="pkg-badge badge-moderate">Moderate</div>
+                  <h4>Himalayan Escape Trek</h4>
+                  <p>7 Days · Himachal Pradesh · Max 12 people</p>
+                  <div class="pkg-price">₹12,999 <span>/ person</span></div>
+                </div>
+                <div class="pkg-check" id="check-himalayan">✓</div>
+              </div>
+              <div class="pkg-option" id="pkg-forest" onclick="selectPackage('trek', 'forest', 'Forest Trail Adventure', 4999, 2)" data-price="4999">
+                <div class="pkg-img"><img src="images/forest_trail.png" alt="Forest Trek" /></div>
+                <div class="pkg-info">
+                  <div class="pkg-badge badge-beginner">Beginner</div>
+                  <h4>Forest Trail Adventure</h4>
+                  <p>2 Days · Western Ghats · Max 20 people</p>
+                  <div class="pkg-price">₹4,999 <span>/ person</span></div>
+                </div>
+                <div class="pkg-check" id="check-forest">✓</div>
+              </div>
+              <div class="pkg-option" id="pkg-sunrise" onclick="selectPackage('trek', 'sunrise', 'Sunrise Peak Expedition', 9499, 5)" data-price="9499">
+                <div class="pkg-img"><img src="images/sunrise_peak.png" alt="Sunrise Trek" /></div>
+                <div class="pkg-info">
+                  <div class="pkg-badge badge-advanced">Advanced</div>
+                  <h4>Sunrise Peak Expedition</h4>
+                  <p>5 Days · Uttarakhand · Max 8 people</p>
+                  <div class="pkg-price">₹9,499 <span>/ person</span></div>
+                </div>
+                <div class="pkg-check" id="check-sunrise">✓</div>
+              </div>
+              <div class="pkg-option" id="pkg-ladakh" onclick="selectPackage('trek', 'ladakh', 'Ladakh Stargazing Expedition', 22999, 12)" data-price="22999">
+                <div class="pkg-img"><img src="images/camping_night.png" alt="Ladakh Trek" /></div>
+                <div class="pkg-info">
+                  <div class="pkg-badge badge-advanced">Advanced</div>
+                  <h4>Ladakh Stargazing Expedition</h4>
+                  <p>12 Days · Ladakh · Max 10 people</p>
+                  <div class="pkg-price">₹22,999 <span>/ person</span></div>
+                </div>
+                <div class="pkg-check" id="check-ladakh">✓</div>
+              </div>
+            </div>
+
+            <!-- Villa Options -->
+            <div class="package-options hidden" id="villa-options">
+              <div class="pkg-option selected" id="pkg-villa-summit" onclick="selectPackage('villa', 'summit', 'The Summit Villa', 18999, 1)" data-price="18999">
+                <div class="pkg-img"><img src="images/villa_luxury.png" alt="Summit Villa" /></div>
+                <div class="pkg-info">
+                  <div class="pkg-badge badge-luxury">Luxury</div>
+                  <h4>The Summit Villa — Manali</h4>
+                  <p>4 Bedrooms · Infinity Pool · Max 8 Guests</p>
+                  <div class="pkg-price">₹18,999 <span>/ night</span></div>
+                </div>
+                <div class="pkg-check" id="check-villa-summit">✓</div>
+              </div>
+              <div class="pkg-option" id="pkg-villa-forest" onclick="selectPackage('villa', 'forest-villa', 'Forest Retreat Villa', 12499, 1)" data-price="12499">
+                <div class="pkg-img"><img src="images/villa_interior.png" alt="Forest Villa" /></div>
+                <div class="pkg-info">
+                  <div class="pkg-badge badge-premium">Premium</div>
+                  <h4>Forest Retreat Villa — Coorg</h4>
+                  <p>3 Bedrooms · Coffee Plantation · Max 6 Guests</p>
+                  <div class="pkg-price">₹12,499 <span>/ night</span></div>
+                </div>
+                <div class="pkg-check" id="check-villa-forest">✓</div>
+              </div>
+              <div class="pkg-option" id="pkg-villa-star" onclick="selectPackage('villa', 'stargazer', 'Stargazer Luxury Camp', 8999, 1)" data-price="8999">
+                <div class="pkg-img"><img src="images/camping_night.png" alt="Stargazer Camp" /></div>
+                <div class="pkg-info">
+                  <div class="pkg-badge badge-luxury">Boutique</div>
+                  <h4>Stargazer Luxury Camp — Spiti</h4>
+                  <p>2 Suite Tents · Hot Tub · Max 4 Guests</p>
+                  <div class="pkg-price">₹8,999 <span>/ night</span></div>
+                </div>
+                <div class="pkg-check" id="check-villa-star">✓</div>
+              </div>
+            </div>
+
+            <!-- Date & Guests -->
+            <div class="date-guests-row">
+              <div class="form-group">
+                <label class="form-label" for="book-date" id="date-label">Trek Start Date</label>
+                <input type="date" id="book-date" class="form-control" required />
+              </div>
+              <div class="form-group" id="end-date-wrap" style="display:none">
+                <label class="form-label" for="book-end-date">Check-out Date</label>
+                <input type="date" id="book-end-date" class="form-control" />
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="book-guests" id="guests-label">Number of Trekkers</label>
+                <select id="book-guests" class="form-control" onchange="updateGuests(this.value)">
+                  <option value="1">1 Person</option>
+                  <option value="2">2 Persons</option>
+                  <option value="3">3 Persons</option>
+                  <option value="4">4 Persons</option>
+                  <option value="5">5 Persons</option>
+                  <option value="6">6 Persons</option>
+                  <option value="7">7 Persons</option>
+                  <option value="8">8 Persons</option>
+                </select>
+              </div>
+            </div>
+
+            <button class="btn-primary" style="width:100%;margin-top:8px" onclick="goToStep(2)" id="step1-next-btn">
+              Continue to Details →
+            </button>
+          </div>
+
+          <!-- STEP 2: Personal Details -->
+          <div class="booking-step" id="step-2">
+            <div class="step-header">
+              <h2>Your Details</h2>
+              <p>We'll use this information to confirm your booking</p>
+            </div>
+            <div class="details-form">
+              <div class="form-row-2">
+                <div class="form-group">
+                  <label class="form-label" for="b-fname">First Name *</label>
+                  <input type="text" id="b-fname" class="form-control" placeholder="Aishwarya" required />
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="b-lname">Last Name *</label>
+                  <input type="text" id="b-lname" class="form-control" placeholder="Rao" required />
+                </div>
+              </div>
+              <div class="form-row-2">
+                <div class="form-group">
+                  <label class="form-label" for="b-email">Email Address *</label>
+                  <input type="email" id="b-email" class="form-control" placeholder="hello@email.com" required />
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="b-phone">Phone / WhatsApp *</label>
+                  <input type="tel" id="b-phone" class="form-control" placeholder="+91 98765 43210" required />
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="b-city">City / State</label>
+                <input type="text" id="b-city" class="form-control" placeholder="Mumbai, Maharashtra" />
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="b-requests">Special Requests (Optional)</label>
+                <textarea id="b-requests" class="form-control" rows="3" placeholder="Dietary restrictions, medical conditions, special arrangements..."></textarea>
+              </div>
+
+              <!-- Emergency Contact -->
+              <div class="emergency-block" id="emergency-block">
+                <h4>🚨 Emergency Contact</h4>
+                <div class="form-row-2">
+                  <div class="form-group">
+                    <label class="form-label" for="b-emname">Contact Name *</label>
+                    <input type="text" id="b-emname" class="form-control" placeholder="Full name" required />
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label" for="b-emphone">Contact Phone *</label>
+                    <input type="tel" id="b-emphone" class="form-control" placeholder="+91 98765 00000" required />
+                  </div>
+                </div>
+              </div>
+
+              <div class="terms-row">
+                <input type="checkbox" id="b-terms" required />
+                <label for="b-terms">I agree to the <a href="#" style="color:var(--clr-primary)">Terms & Conditions</a> and <a href="#" style="color:var(--clr-primary)">Cancellation Policy</a></label>
+              </div>
+
+              <div class="step-nav">
+                <button class="btn-secondary" onclick="goToStep(1)" id="step2-back-btn">← Back</button>
+                <button class="btn-primary" onclick="goToStep(3)" id="step2-next-btn">Continue to Payment →</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- STEP 3: Payment -->
+          <div class="booking-step" id="step-3">
+            <div class="step-header">
+              <h2>Secure Payment</h2>
+              <p>Your payment is protected with 256-bit SSL encryption</p>
+            </div>
+
+            <div class="payment-method-tabs" id="payment-tabs">
+              <button class="pay-tab active" id="tab-upi" onclick="switchPayTab('upi')">
+                <span>📱</span> UPI
+              </button>
+              <button class="pay-tab" id="tab-card" onclick="switchPayTab('card')">
+                <span>💳</span> Card
+              </button>
+              <button class="pay-tab" id="tab-netbanking" onclick="switchPayTab('netbanking')">
+                <span>🏦</span> Net Banking
+              </button>
+              <button class="pay-tab" id="tab-wallet" onclick="switchPayTab('wallet')">
+                <span>👛</span> Wallet
+              </button>
+            </div>
+
+            <!-- UPI Panel -->
+            <div class="pay-panel active" id="panel-upi">
+              <div class="upi-section">
+                <div class="upi-qr-block" id="upi-qr-block">
+                  <div class="qr-placeholder" id="qr-code-display">
+                    <div class="qr-grid" id="qr-grid"></div>
+                  </div>
+                  <p class="upi-scan-text">Scan with any UPI app</p>
+                  <div class="upi-apps">
+                    <span class="upi-app">GPay</span>
+                    <span class="upi-app">PhonePe</span>
+                    <span class="upi-app">Paytm</span>
+                    <span class="upi-app">BHIM</span>
+                  </div>
+                </div>
+                <div class="upi-divider"><span>OR</span></div>
+                <div class="upi-id-section">
+                  <div class="form-group">
+                    <label class="form-label" for="upi-id">Enter UPI ID</label>
+                    <input type="text" id="upi-id" class="form-control" placeholder="yourname@upi" />
+                  </div>
+                  <button class="btn-primary" style="width:100%" onclick="processPayment('upi')" id="upi-pay-btn">
+                    Pay ₹<span id="upi-amount">0</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card Panel -->
+            <div class="pay-panel" id="panel-card">
+              <div class="card-form">
+                <div class="form-group">
+                  <label class="form-label" for="card-num">Card Number</label>
+                  <div class="card-input-wrap">
+                    <input type="text" id="card-num" class="form-control" placeholder="1234 5678 9012 3456" maxlength="19" oninput="formatCard(this)" />
+                    <div class="card-icons">
+                      <span id="card-type-icon">💳</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-row-2">
+                  <div class="form-group">
+                    <label class="form-label" for="card-expiry">Expiry Date</label>
+                    <input type="text" id="card-expiry" class="form-control" placeholder="MM / YY" maxlength="7" oninput="formatExpiry(this)" />
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label" for="card-cvv">CVV</label>
+                    <input type="password" id="card-cvv" class="form-control" placeholder="•••" maxlength="3" />
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="card-name">Name on Card</label>
+                  <input type="text" id="card-name" class="form-control" placeholder="AISHWARYA RAO" />
+                </div>
+                <div class="card-security-note">
+                  🔒 Your card details are encrypted and never stored on our servers.
+                </div>
+                <button class="btn-primary" style="width:100%;margin-top:4px" onclick="processPayment('card')" id="card-pay-btn">
+                  Pay Securely ₹<span id="card-amount">0</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- Net Banking Panel -->
+            <div class="pay-panel" id="panel-netbanking">
+              <div class="netbanking-form">
+                <div class="form-group">
+                  <label class="form-label" for="bank-select">Select Your Bank</label>
+                  <select id="bank-select" class="form-control">
+                    <option value="">Choose a bank</option>
+                    <option>State Bank of India</option>
+                    <option>HDFC Bank</option>
+                    <option>ICICI Bank</option>
+                    <option>Axis Bank</option>
+                    <option>Kotak Mahindra Bank</option>
+                    <option>Punjab National Bank</option>
+                    <option>Bank of Baroda</option>
+                    <option>Yes Bank</option>
+                    <option>Canara Bank</option>
+                    <option>Other Bank</option>
+                  </select>
+                </div>
+                <div class="popular-banks">
+                  <p class="popular-label">Popular Banks:</p>
+                  <div class="bank-btns">
+                    <button class="bank-btn" onclick="selectBank('SBI')" id="bank-sbi">SBI</button>
+                    <button class="bank-btn" onclick="selectBank('HDFC')" id="bank-hdfc">HDFC</button>
+                    <button class="bank-btn" onclick="selectBank('ICICI')" id="bank-icici">ICICI</button>
+                    <button class="bank-btn" onclick="selectBank('Axis')" id="bank-axis">Axis</button>
+                  </div>
+                </div>
+                <button class="btn-primary" style="width:100%;margin-top:16px" onclick="processPayment('netbanking')" id="netbanking-pay-btn">
+                  Proceed to Bank ₹<span id="nb-amount">0</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- Wallet Panel -->
+            <div class="pay-panel" id="panel-wallet">
+              <div class="wallet-grid">
+                <button class="wallet-btn active" id="wallet-paytm" onclick="selectWallet('Paytm')">
+                  <span>💰</span> Paytm
+                </button>
+                <button class="wallet-btn" id="wallet-phonepe" onclick="selectWallet('PhonePe')">
+                  <span>📱</span> PhonePe
+                </button>
+                <button class="wallet-btn" id="wallet-amazon" onclick="selectWallet('Amazon Pay')">
+                  <span>🛒</span> Amazon Pay
+                </button>
+                <button class="wallet-btn" id="wallet-freecharge" onclick="selectWallet('Freecharge')">
+                  <span>⚡</span> Freecharge
+                </button>
+              </div>
+              <button class="btn-primary" style="width:100%;margin-top:20px" onclick="processPayment('wallet')" id="wallet-pay-btn">
+                Pay via Wallet ₹<span id="wallet-amount">0</span>
+              </button>
+            </div>
+
+            <div class="step-nav">
+              <button class="btn-secondary" onclick="goToStep(2)" id="step3-back-btn">← Back</button>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- RIGHT: BOOKING SUMMARY -->
+        <div class="booking-summary-col" id="booking-summary-col">
+          <div class="booking-summary" id="booking-summary">
+            <div class="summary-header">
+              <h3>Booking Summary</h3>
+            </div>
+            <div class="summary-pkg-img">
+              <img id="summary-img" src="images/hero_mountain.png" alt="Selected package" />
+              <div class="summary-img-overlay"></div>
+              <div class="summary-pkg-badge" id="summary-badge">Trek</div>
+            </div>
+            <div class="summary-pkg-name" id="summary-pkg-name">Himalayan Escape Trek</div>
+            <div class="summary-pkg-meta">
+              <span id="summary-date-display">📅 Select a date</span>
+              <span id="summary-guests-display">👥 1 Person</span>
+              <span id="summary-duration-display">⏱️ 7 Days</span>
+            </div>
+
+            <div class="summary-breakdown">
+              <div class="summary-row">
+                <span>Base Price</span>
+                <span id="s-base">₹12,999 × 1</span>
+              </div>
+              <div class="summary-row">
+                <span>Service Fee</span>
+                <span id="s-fee">₹650</span>
+              </div>
+              <div class="summary-row">
+                <span>GST (18%)</span>
+                <span id="s-tax">₹2,340</span>
+              </div>
+              <div class="summary-row discount" id="discount-row" style="display:none">
+                <span>Discount</span>
+                <span id="s-discount" style="color:var(--clr-success)">-₹0</span>
+              </div>
+            </div>
+
+            <div class="summary-coupon">
+              <input type="text" id="coupon-input" class="form-control" placeholder="Enter promo code" />
+              <button class="coupon-btn" onclick="applyCoupon()" id="apply-coupon-btn">Apply</button>
+            </div>
+
+            <div class="summary-total">
+              <span>Total Amount</span>
+              <span id="s-total" class="total-amount">₹15,989</span>
+            </div>
+
+            <div class="summary-trust">
+              <div class="trust-item">🔒 Secure & Encrypted</div>
+              <div class="trust-item">✅ Free Cancellation (48h)</div>
+              <div class="trust-item">📧 Instant Confirmation</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- OTP MODAL -->
+  <div class="modal-overlay" id="otp-modal">
+    <div class="modal-box" id="otp-box">
+      <div class="modal-icon">📱</div>
+      <h3>Verify Your Payment</h3>
+      <p>Enter the 6-digit OTP sent to your registered mobile number</p>
+      <div class="otp-inputs" id="otp-inputs">
+        <input type="text" class="otp-input" maxlength="1" id="otp-0" oninput="moveOTP(this,1)" />
+        <input type="text" class="otp-input" maxlength="1" id="otp-1" oninput="moveOTP(this,2)" onkeydown="backOTP(this,0,event)" />
+        <input type="text" class="otp-input" maxlength="1" id="otp-2" oninput="moveOTP(this,3)" onkeydown="backOTP(this,1,event)" />
+        <input type="text" class="otp-input" maxlength="1" id="otp-3" oninput="moveOTP(this,4)" onkeydown="backOTP(this,2,event)" />
+        <input type="text" class="otp-input" maxlength="1" id="otp-4" oninput="moveOTP(this,5)" onkeydown="backOTP(this,3,event)" />
+        <input type="text" class="otp-input" maxlength="1" id="otp-5" onkeydown="backOTP(this,4,event)" />
+      </div>
+      <p class="otp-hint" id="otp-hint">Demo OTP: <strong>123456</strong></p>
+      <button class="btn-primary" style="width:100%;margin-top:4px" onclick="verifyOTP()" id="verify-otp-btn">Verify & Pay</button>
+      <button class="btn-secondary" style="width:100%;margin-top:10px" onclick="closeModal('otp-modal')" id="cancel-otp-btn">Cancel</button>
+    </div>
+  </div>
+
+  <!-- SUCCESS MODAL -->
+  <div class="modal-overlay" id="success-modal">
+    <div class="modal-box success-box" id="success-box">
+      <div class="success-animation" id="success-animation">
+        <div class="success-circle">
+          <div class="success-check">✓</div>
+        </div>
+        <div class="success-rings">
+          <div class="ring ring1"></div>
+          <div class="ring ring2"></div>
+        </div>
+      </div>
+      <h2 class="success-title">Booking Confirmed! 🎉</h2>
+      <p class="success-sub">Your adventure is officially booked. Get ready for an unforgettable experience!</p>
+      <div class="booking-ref" id="booking-ref">
+        Booking ID: <strong id="booking-id-display">SS-2026-XXXX</strong>
+      </div>
+      <div class="receipt-details" id="receipt-details">
+        <div class="receipt-row"><span>Package</span><span id="r-pkg">—</span></div>
+        <div class="receipt-row"><span>Date</span><span id="r-date">—</span></div>
+        <div class="receipt-row"><span>Guests</span><span id="r-guests">—</span></div>
+        <div class="receipt-row"><span>Amount Paid</span><span id="r-amount" style="color:var(--clr-success);font-weight:700">—</span></div>
+        <div class="receipt-row"><span>Payment Method</span><span id="r-method">—</span></div>
+      </div>
+      <p class="success-email-note">📧 Confirmation email sent to <strong id="r-email">your email</strong></p>
+      <div class="success-actions">
+        <button class="btn-primary" onclick="downloadReceipt()" id="download-receipt-btn">📥 Download Receipt</button>
+        <a href="index.html" class="btn-secondary" id="go-home-btn">Back to Home</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="toast" id="toast"></div>
+  <script src="shared.js"></script>
+  <script src="booking.js"></script>
+</body>
+</html>

@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Explore Summit & Stays premium trekking packages — from beginner trails to advanced Himalayan expeditions. Book your trek online instantly." />
+  <title>Trekking Adventures — Summit & Stays</title>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,700;0,800;1,700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="treks.css" />
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar scrolled" id="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <span class="logo-icon">⛰️</span>
+        <div>
+          <span class="logo-text">Summit <span style="color:var(--clr-primary)">&</span> Stays</span>
+          <span class="logo-sub">Trek · Stay · Explore</span>
+        </div>
+      </a>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="treks.html" class="nav-link active">Treks</a></li>
+        <li><a href="villas.html" class="nav-link">Villas</a></li>
+        <li><a href="booking.html" class="nav-link">Book Now</a></li>
+        <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+      </ul>
+      <div class="nav-actions">
+        <a href="villas.html" class="btn-nav-outline">Villas</a>
+        <a href="booking.html" class="btn-nav-primary" id="nav-book-btn">Book Now</a>
+        <button class="hamburger" id="hamburger" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- PAGE HERO -->
+  <div class="page-hero">
+    <div class="page-hero-bg">
+      <img src="images/hero_mountain.png" alt="Mountain trekking" />
+      <div class="page-hero-overlay"></div>
+    </div>
+    <div class="page-hero-content">
+      <div class="container">
+        <div class="section-eyebrow" style="color:var(--clr-primary);margin-bottom:12px">🏔️ All Trek Packages</div>
+        <h1 class="page-hero-title">Trekking <span style="background:var(--grad-primary);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">Adventures</span></h1>
+        <p class="page-hero-sub">From beginner-friendly nature walks to challenging high-altitude expeditions — find your perfect trail.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- FILTER & SORT -->
+  <section class="treks-main section-sm" id="treks-main">
+    <div class="container">
+      <div class="treks-toolbar reveal">
+        <div class="filter-bar">
+          <button class="filter-btn active" onclick="filterTreks('all')" id="filter-all">All Treks</button>
+          <button class="filter-btn" onclick="filterTreks('beginner')" id="filter-beginner">Beginner</button>
+          <button class="filter-btn" onclick="filterTreks('moderate')" id="filter-moderate">Moderate</button>
+          <button class="filter-btn" onclick="filterTreks('advanced')" id="filter-advanced">Advanced</button>
+          <button class="filter-btn" onclick="filterTreks('weekend')" id="filter-weekend">Weekend Treks</button>
+          <button class="filter-btn" onclick="filterTreks('himalayan')" id="filter-himalayan">Himalayan</button>
+        </div>
+        <div class="sort-bar">
+          <label for="sort-select">Sort by:</label>
+          <select id="sort-select" class="form-control" style="width:auto;padding:9px 14px" onchange="sortTreks(this.value)">
+            <option value="popular">Most Popular</option>
+            <option value="price-low">Price: Low to High</option>
+            <option value="price-high">Price: High to Low</option>
+            <option value="duration">Duration</option>
+            <option value="rating">Rating</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Treks Grid -->
+      <div class="treks-grid-full" id="treks-grid">
+
+        <!-- Trek 1 -->
+        <div class="trek-full-card card reveal" id="tcard-1" data-difficulty="moderate" data-price="12999" data-days="7" data-rating="4.9" data-category="himalayan moderate">
+          <div class="tfc-img">
+            <img src="images/hero_mountain.png" alt="Himalayan Escape Trek" loading="lazy" />
+            <div class="tfc-badges">
+              <span class="badge badge-moderate">Moderate</span>
+              <span class="tfc-like" onclick="toggleLike(this)" id="tlike-1">🤍</span>
+            </div>
+            <div class="tfc-overlay-btn">
+              <a href="booking.html?type=trek&id=himalayan" class="btn-primary small" id="tcard-book-1">Book This Trek</a>
+            </div>
+          </div>
+          <div class="tfc-body">
+            <div class="tfc-location">📍 Himachal Pradesh, India</div>
+            <h2 class="tfc-name">Himalayan Escape Trek</h2>
+            <p class="tfc-desc">Journey through snow-capped peaks, crystal alpine meadows, and high-altitude campsites with breathtaking panoramic views. Perfect for those seeking an authentic Himalayan experience.</p>
+            <div class="tfc-highlights">
+              <div class="tfc-highlight">✅ Rohtang Pass crossing</div>
+              <div class="tfc-highlight">✅ Chandratal Lake visit</div>
+              <div class="tfc-highlight">✅ Hampta Pass summit</div>
+            </div>
+            <div class="tfc-meta">
+              <span class="trek-meta-pill">⏱️ 7 Days</span>
+              <span class="trek-meta-pill">🎒 15kg Max Bag</span>
+              <span class="trek-meta-pill">👥 Max 12 People</span>
+              <span class="trek-meta-pill">📏 Altitude: 14,100ft</span>
+              <span class="trek-meta-pill">🌡️ Best: May–Sep</span>
+            </div>
+            <div class="tfc-footer">
+              <div class="tfc-price-block">
+                <span class="trek-from">Starting from</span>
+                <span class="trek-price">₹12,999</span>
+                <span class="trek-per">/ person</span>
+              </div>
+              <div class="tfc-actions">
+                <div class="trek-rating">
+                  <span class="stars">★★★★★</span>
+                  <span class="rating-val">4.9 (128 reviews)</span>
+                </div>
+                <a href="booking.html?type=trek&id=himalayan" class="btn-primary" id="tcard-book1-cta">Book Now →</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Trek 2 -->
+        <div class="trek-full-card card reveal reveal-delay-1" id="tcard-2" data-difficulty="beginner" data-price="4999" data-days="2" data-rating="4.8" data-category="beginner weekend">
+          <div class="tfc-img">
+            <img src="images/forest_trail.png" alt="Forest Trail Adventure" loading="lazy" />
+            <div class="tfc-badges">
+              <span class="badge badge-beginner">Beginner</span>
+              <span class="tfc-like" onclick="toggleLike(this)" id="tlike-2">🤍</span>
+            </div>
+            <div class="tfc-overlay-btn">
+              <a href="booking.html?type=trek&id=forest" class="btn-primary small" id="tcard-book-2">Book This Trek</a>
+            </div>
+          </div>
+          <div class="tfc-body">
+            <div class="tfc-location">📍 Western Ghats, Goa/Karnataka</div>
+            <h2 class="tfc-name">Forest Trail Adventure</h2>
+            <p class="tfc-desc">A lush weekend escape into India's most biodiverse forest ecosystem. Discover cascading waterfalls, rare wildlife, and peaceful bamboo groves. Perfect for first-timers and families.</p>
+            <div class="tfc-highlights">
+              <div class="tfc-highlight">✅ Dudhsagar Waterfall visit</div>
+              <div class="tfc-highlight">✅ Night camping in forest</div>
+              <div class="tfc-highlight">✅ Wildlife trail with naturalist</div>
+            </div>
+            <div class="tfc-meta">
+              <span class="trek-meta-pill">⏱️ 2 Days</span>
+              <span class="trek-meta-pill">🎒 8kg Max Bag</span>
+              <span class="trek-meta-pill">👥 Max 20 People</span>
+              <span class="trek-meta-pill">📏 Altitude: 800ft</span>
+              <span class="trek-meta-pill">🌡️ Best: Oct–Mar</span>
+            </div>
+            <div class="tfc-footer">
+              <div class="tfc-price-block">
+                <span class="trek-from">Starting from</span>
+                <span class="trek-price">₹4,999</span>
+                <span class="trek-per">/ person</span>
+              </div>
+              <div class="tfc-actions">
+                <div class="trek-rating">
+                  <span class="stars">★★★★★</span>
+                  <span class="rating-val">4.8 (204 reviews)</span>
+                </div>
+                <a href="booking.html?type=trek&id=forest" class="btn-primary" id="tcard-book2-cta">Book Now →</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Trek 3 -->
+        <div class="trek-full-card card reveal" id="tcard-3" data-difficulty="advanced" data-price="9499" data-days="5" data-rating="4.9" data-category="advanced himalayan">
+          <div class="tfc-img">
+            <img src="images/sunrise_peak.png" alt="Sunrise Peak Expedition" loading="lazy" />
+            <div class="tfc-badges">
+              <span class="badge badge-advanced">Advanced</span>
+              <span class="tfc-like" onclick="toggleLike(this)" id="tlike-3">🤍</span>
+            </div>
+            <div class="tfc-overlay-btn">
+              <a href="booking.html?type=trek&id=sunrise" class="btn-primary small" id="tcard-book-3">Book This Trek</a>
+            </div>
+          </div>
+          <div class="tfc-body">
+            <div class="tfc-location">📍 Uttarakhand, India</div>
+            <h2 class="tfc-name">Sunrise Peak Expedition</h2>
+            <p class="tfc-desc">Summit India's most dramatic peaks at the golden hour. A rigorous 5-day challenge for experienced trekkers, rewarded with skies that will forever change your perspective on life.</p>
+            <div class="tfc-highlights">
+              <div class="tfc-highlight">✅ Summit at 15,200ft</div>
+              <div class="tfc-highlight">✅ Glacier crossing</div>
+              <div class="tfc-highlight">✅ 360° Himalayan panorama</div>
+            </div>
+            <div class="tfc-meta">
+              <span class="trek-meta-pill">⏱️ 5 Days</span>
+              <span class="trek-meta-pill">🎒 12kg Max Bag</span>
+              <span class="trek-meta-pill">👥 Max 8 People</span>
+              <span class="trek-meta-pill">📏 Altitude: 15,200ft</span>
+              <span class="trek-meta-pill">🌡️ Best: Jun–Oct</span>
+            </div>
+            <div class="tfc-footer">
+              <div class="tfc-price-block">
+                <span class="trek-from">Starting from</span>
+                <span class="trek-price">₹9,499</span>
+                <span class="trek-per">/ person</span>
+              </div>
+              <div class="tfc-actions">
+                <div class="trek-rating">
+                  <span class="stars">★★★★★</span>
+                  <span class="rating-val">4.9 (87 reviews)</span>
+                </div>
+                <a href="booking.html?type=trek&id=sunrise" class="btn-primary" id="tcard-book3-cta">Book Now →</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Trek 4 -->
+        <div class="trek-full-card card reveal reveal-delay-1" id="tcard-4" data-difficulty="moderate" data-price="7499" data-days="4" data-rating="4.7" data-category="moderate weekend">
+          <div class="tfc-img">
+            <img src="images/waterfall_trek.png" alt="Valley Waterfall Trek" loading="lazy" />
+            <div class="tfc-badges">
+              <span class="badge badge-moderate">Moderate</span>
+              <span class="tfc-like" onclick="toggleLike(this)" id="tlike-4">🤍</span>
+            </div>
+            <div class="tfc-overlay-btn">
+              <a href="booking.html?type=trek&id=valley" class="btn-primary small" id="tcard-book-4">Book This Trek</a>
+            </div>
+          </div>
+          <div class="tfc-body">
+            <div class="tfc-location">📍 Meghalaya, Northeast India</div>
+            <h2 class="tfc-name">Valley & Waterfall Trek</h2>
+            <p class="tfc-desc">Explore the living root bridges of Meghalaya and discover hidden waterfalls in the wettest place on Earth. A truly magical experience through India's northeastern paradise.</p>
+            <div class="tfc-highlights">
+              <div class="tfc-highlight">✅ Living Root Bridge</div>
+              <div class="tfc-highlight">✅ Double Decker Bridge</div>
+              <div class="tfc-highlight">✅ Rainbow Falls hike</div>
+            </div>
+            <div class="tfc-meta">
+              <span class="trek-meta-pill">⏱️ 4 Days</span>
+              <span class="trek-meta-pill">🎒 10kg Max Bag</span>
+              <span class="trek-meta-pill">👥 Max 15 People</span>
+              <span class="trek-meta-pill">📏 Altitude: 4,500ft</span>
+              <span class="trek-meta-pill">🌡️ Best: Oct–Apr</span>
+            </div>
+            <div class="tfc-footer">
+              <div class="tfc-price-block">
+                <span class="trek-from">Starting from</span>
+                <span class="trek-price">₹7,499</span>
+                <span class="trek-per">/ person</span>
+              </div>
+              <div class="tfc-actions">
+                <div class="trek-rating">
+                  <span class="stars">★★★★☆</span>
+                  <span class="rating-val">4.7 (63 reviews)</span>
+                </div>
+                <a href="booking.html?type=trek&id=valley" class="btn-primary" id="tcard-book4-cta">Book Now →</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Trek 5 -->
+        <div class="trek-full-card card reveal" id="tcard-5" data-difficulty="beginner" data-price="3999" data-days="1" data-rating="4.6" data-category="beginner weekend">
+          <div class="tfc-img">
+            <img src="images/group_trekking.png" alt="Coorg Day Trek" loading="lazy" />
+            <div class="tfc-badges">
+              <span class="badge badge-beginner">Beginner</span>
+              <span class="tfc-like" onclick="toggleLike(this)" id="tlike-5">🤍</span>
+            </div>
+            <div class="tfc-overlay-btn">
+              <a href="booking.html?type=trek&id=coorg" class="btn-primary small" id="tcard-book-5">Book This Trek</a>
+            </div>
+          </div>
+          <div class="tfc-body">
+            <div class="tfc-location">📍 Coorg, Karnataka</div>
+            <h2 class="tfc-name">Coorg Coffee Trail Trek</h2>
+            <p class="tfc-desc">Walk through misty coffee plantations, enjoy sunrise views from Pushpagiri peak, and sip freshly brewed Coorg coffee at the summit. A perfect 1-day adventure from Bangalore.</p>
+            <div class="tfc-highlights">
+              <div class="tfc-highlight">✅ Coffee plantation walk</div>
+              <div class="tfc-highlight">✅ Pushpagiri summit</div>
+              <div class="tfc-highlight">✅ Traditional Kodava lunch</div>
+            </div>
+            <div class="tfc-meta">
+              <span class="trek-meta-pill">⏱️ 1 Day</span>
+              <span class="trek-meta-pill">🎒 5kg Max Bag</span>
+              <span class="trek-meta-pill">👥 Max 25 People</span>
+              <span class="trek-meta-pill">📏 Altitude: 5,600ft</span>
+              <span class="trek-meta-pill">🌡️ Best: Sep–Mar</span>
+            </div>
+            <div class="tfc-footer">
+              <div class="tfc-price-block">
+                <span class="trek-from">Starting from</span>
+                <span class="trek-price">₹3,999</span>
+                <span class="trek-per">/ person</span>
+              </div>
+              <div class="tfc-actions">
+                <div class="trek-rating">
+                  <span class="stars">★★★★☆</span>
+                  <span class="rating-val">4.6 (192 reviews)</span>
+                </div>
+                <a href="booking.html?type=trek&id=coorg" class="btn-primary" id="tcard-book5-cta">Book Now →</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Trek 6 -->
+        <div class="trek-full-card card reveal reveal-delay-1" id="tcard-6" data-difficulty="advanced" data-price="22999" data-days="12" data-rating="5.0" data-category="advanced himalayan">
+          <div class="tfc-img">
+            <img src="images/camping_night.png" alt="Ladakh Stargazing Trek" loading="lazy" />
+            <div class="tfc-badges">
+              <span class="badge badge-advanced">Advanced</span>
+              <span class="tfc-like" onclick="toggleLike(this)" id="tlike-6">🤍</span>
+            </div>
+            <div class="tfc-overlay-btn">
+              <a href="booking.html?type=trek&id=ladakh" class="btn-primary small" id="tcard-book-6">Book This Trek</a>
+            </div>
+          </div>
+          <div class="tfc-body">
+            <div class="tfc-location">📍 Ladakh, Jammu & Kashmir</div>
+            <h2 class="tfc-name">Ladakh Stargazing Expedition</h2>
+            <p class="tfc-desc">The ultimate Ladakh adventure — high-altitude desert landscapes, ancient monasteries, Pangong Lake, and the most breathtaking night skies you'll ever witness. A once-in-a-lifetime journey.</p>
+            <div class="tfc-highlights">
+              <div class="tfc-highlight">✅ Pangong Lake campsite</div>
+              <div class="tfc-highlight">✅ Khardung La Pass (18,380ft)</div>
+              <div class="tfc-highlight">✅ Professional astrophotography session</div>
+            </div>
+            <div class="tfc-meta">
+              <span class="trek-meta-pill">⏱️ 12 Days</span>
+              <span class="trek-meta-pill">🎒 15kg Max Bag</span>
+              <span class="trek-meta-pill">👥 Max 10 People</span>
+              <span class="trek-meta-pill">📏 Altitude: 18,380ft</span>
+              <span class="trek-meta-pill">🌡️ Best: Jun–Sep</span>
+            </div>
+            <div class="tfc-footer">
+              <div class="tfc-price-block">
+                <span class="trek-from">Starting from</span>
+                <span class="trek-price">₹22,999</span>
+                <span class="trek-per">/ person</span>
+              </div>
+              <div class="tfc-actions">
+                <div class="trek-rating">
+                  <span class="stars">★★★★★</span>
+                  <span class="rating-val">5.0 (41 reviews)</span>
+                </div>
+                <a href="booking.html?type=trek&id=ladakh" class="btn-primary" id="tcard-book6-cta">Book Now →</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- No Results -->
+      <div class="no-results" id="no-results" style="display:none">
+        <div class="no-results-icon">🏔️</div>
+        <h3>No treks found</h3>
+        <p>Try adjusting your filters to explore more options.</p>
+        <button class="btn-secondary" onclick="filterTreks('all')" id="reset-filters-btn">Reset Filters</button>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- INCLUDED BANNER -->
+  <section class="included-section section" id="included">
+    <div class="container">
+      <div class="section-header center reveal">
+        <div class="section-eyebrow accent">What's Included</div>
+        <h2 class="section-title">Everything You <span class="grad-teal">Need Is Included</span></h2>
+      </div>
+      <div class="included-grid reveal">
+        <div class="included-item" id="inc-1">
+          <div class="included-icon">🏕️</div>
+          <h4>Camping & Tents</h4>
+          <p>Premium quality tents, sleeping bags, and camping mats provided for all participants.</p>
+        </div>
+        <div class="included-item" id="inc-2">
+          <div class="included-icon">🍽️</div>
+          <h4>All Meals</h4>
+          <p>Nutritious, freshly prepared meals — breakfast, lunch, snacks, and dinner throughout.</p>
+        </div>
+        <div class="included-item" id="inc-3">
+          <div class="included-icon">🚌</div>
+          <h4>Transport</h4>
+          <p>Comfortable bus/jeep pickup from and drop to designated meeting points.</p>
+        </div>
+        <div class="included-item" id="inc-4">
+          <div class="included-icon">🧑‍⚕️</div>
+          <h4>Medical Support</h4>
+          <p>Certified first-aid guide and emergency medical kit on every trek.</p>
+        </div>
+        <div class="included-item" id="inc-5">
+          <div class="included-icon">📸</div>
+          <h4>Photography</h4>
+          <p>Professional trek photographer on select packages — stunning memories guaranteed.</p>
+        </div>
+        <div class="included-item" id="inc-6">
+          <div class="included-icon">🎒</div>
+          <h4>Trek Equipment</h4>
+          <p>Trekking poles, headlamps, rain ponchos, and safety gear included for all.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer" id="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="logo-wrap">
+            <span class="logo-icon">⛰️</span>
+            <div>
+              <span class="logo-text">Summit & Stays</span>
+              <span class="logo-sub">Trek · Stay · Explore</span>
+            </div>
+          </div>
+          <p class="footer-tagline">India's most trusted platform for trekking adventures and luxury mountain villa bookings.</p>
+          <div class="footer-socials">
+            <a href="#" class="social-btn" id="f-ig">📸</a>
+            <a href="#" class="social-btn" id="f-fb">👤</a>
+            <a href="#" class="social-btn" id="f-yt">▶️</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Trek Packages</h4>
+          <ul>
+            <li><a href="booking.html?type=trek&id=himalayan">Himalayan Escape</a></li>
+            <li><a href="booking.html?type=trek&id=forest">Forest Trail</a></li>
+            <li><a href="booking.html?type=trek&id=sunrise">Sunrise Peak</a></li>
+            <li><a href="booking.html?type=trek&id=valley">Valley Waterfall</a></li>
+            <li><a href="booking.html?type=trek&id=ladakh">Ladakh Expedition</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="villas.html">Villa Stays</a></li>
+            <li><a href="booking.html">Book Now</a></li>
+            <li><a href="index.html#contact">Contact Us</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <ul>
+            <li><span>📍 Pune, Maharashtra</span></li>
+            <li><span>📞 +91 98765 43210</span></li>
+            <li><span>✉️ hello@summitstays.in</span></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 Summit & Stays. All rights reserved.</p>
+        <div class="footer-bottom-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms</a>
+          <a href="#">Refund Policy</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <div class="toast" id="toast"></div>
+  <script src="shared.js"></script>
+  <script src="treks.js"></script>
+</body>
+</html>
